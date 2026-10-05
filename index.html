@@ -40,11 +40,12 @@
   /* Hero: the extended starfield with Sadie on the right */
   .hero {
     position: relative;
-    min-height: 100vh;
-    min-height: 100svh;
+    /* Tall enough that the poster's names and billing block are never cropped:
+       the artwork can lose at most its extra sky above and below. */
+    min-height: max(100svh, 56.25vw);
     display: flex;
     align-items: center;
-    background: var(--night) url("assets/hero-wide.jpg") right center / cover no-repeat;
+    background: var(--night) url("assets/hero-wide.jpg") right 66% / cover no-repeat;
     padding: max(48px, env(safe-area-inset-top)) clamp(24px, 6vw, 112px) max(96px, env(safe-area-inset-bottom));
   }
   .hero__poster { display: none; }
@@ -150,15 +151,12 @@
       display: block;
       width: 100%;
       height: auto;
-      max-height: 78svh;
-      object-fit: cover;
-      object-position: center 30%;
     }
     .hero__poster::after {
       content: "";
       position: absolute;
       inset: auto 0 0 0;
-      height: 40%;
+      height: 10%;
       background: linear-gradient(to bottom, rgba(12,22,48,0), var(--night));
     }
     .copy { padding: 8px 24px 0; margin-top: -24px; max-width: none; }
