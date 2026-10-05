@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Road to Recovery — Coming Soon</title>
+<meta name="description" content="A terminally ill teenager and her overprotective father drive across the desert to find the boy she loves. Written and directed by Scout Taylor-Compton. Starring Ryan Kiera Armstrong and Freddie Prinze Jr.">
+<meta property="og:title" content="Road to Recovery">
+<meta property="og:description" content="When you can't change the destination, you change the journey. Coming soon.">
+<meta property="og:type" content="video.movie">
+<meta property="og:image" content="assets/share.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0c1630">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230c1630'/%3E%3Cpath d='M16 5l2.6 8.4L27 16l-8.4 2.6L16 27l-2.6-8.4L5 16l8.4-2.6z' fill='%23e2b25c'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --night: #0c1630;
+    --deep: #060c1c;
+    --starlight: #e3e8f2;
+    --mist: #a9b4cb;
+    --dim: #7d89a3;
+    --gold: #e2b25c;
+    --sans: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { height: 100%; background: var(--deep); }
+  body {
+    min-height: 100%;
+    background: var(--night);
+    color: var(--starlight);
+    font-family: var(--sans);
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Hero: the extended starfield with Sadie on the right */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    background: var(--night) url("assets/hero-wide.jpg") right center / cover no-repeat;
+    padding: max(48px, env(safe-area-inset-top)) clamp(24px, 6vw, 112px) max(96px, env(safe-area-inset-bottom));
+  }
+  .hero__poster { display: none; }
+
+  .copy {
+    position: relative;
+    max-width: 34rem;
+    animation: rise 1.6s ease-out both;
+  }
+  h1 {
+    font-weight: 300;
+    font-size: clamp(3.25rem, 7.5vw, 7rem);
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+    color: #dfe4ef;
+  }
+  .tagline {
+    margin-top: 1.5rem;
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(1.5rem, 2.4vw, 2.1rem);
+    line-height: 1.25;
+    color: var(--mist);
+    max-width: 26ch;
+  }
+  .soon {
+    margin-top: 2.5rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--gold);
+  }
+  .credits {
+    margin-top: 1.25rem;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    color: var(--mist);
+  }
+  .credits strong { color: var(--starlight); font-weight: 700; white-space: nowrap; }
+
+  /* Story */
+  .story {
+    background: var(--deep);
+    padding: clamp(72px, 10vw, 128px) clamp(24px, 6vw, 112px);
+    display: grid;
+    grid-template-columns: minmax(0, 38rem) minmax(0, 1fr);
+    gap: clamp(40px, 6vw, 96px);
+    align-items: start;
+  }
+  .story p {
+    font-family: var(--serif);
+    font-size: clamp(1.35rem, 1.9vw, 1.6rem);
+    line-height: 1.6;
+    color: #d3d9e6;
+    max-width: 62ch;
+  }
+  .cast {
+    list-style: none;
+    font-size: 1.0625rem;
+    line-height: 2;
+    color: var(--mist);
+  }
+  .cast li:first-child, .cast li:nth-child(2) { color: var(--starlight); }
+
+  /* Footer */
+  footer {
+    background: var(--deep);
+    border-top: 1px solid #1b2745;
+    padding: 40px clamp(24px, 6vw, 112px) max(40px, env(safe-area-inset-bottom));
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 40px;
+    justify-content: space-between;
+    font-size: 0.9375rem;
+    color: var(--dim);
+  }
+  footer a { color: var(--mist); text-decoration: none; border-bottom: 1px solid #34436a; }
+  footer a:hover { color: var(--starlight); border-color: var(--gold); }
+  a:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; border-radius: 2px; }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .copy { animation: none; }
+  }
+
+  /* Tablet and phone: poster on top, text beneath on the night sky */
+  @media (max-width: 900px) {
+    .hero {
+      display: block;
+      min-height: 0;
+      background: var(--night);
+      padding: 0 0 72px;
+    }
+    .hero__poster {
+      display: block;
+      position: relative;
+    }
+    .hero__poster img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 78svh;
+      object-fit: cover;
+      object-position: center 30%;
+    }
+    .hero__poster::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 40%;
+      background: linear-gradient(to bottom, rgba(12,22,48,0), var(--night));
+    }
+    .copy { padding: 8px 24px 0; margin-top: -24px; max-width: none; }
+    .story { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+  <main>
+    <section class="hero" aria-label="Road to Recovery">
+      <div class="hero__poster">
+        <img src="assets/poster-800.jpg" srcset="assets/poster-800.jpg 800w, assets/poster.jpg 1214w" sizes="100vw" alt="Road to Recovery poster: Sadie looks up at a sky full of stars">
+      </div>
+      <div class="copy">
+        <h1>Road to Recovery</h1>
+        <p class="tagline">When you can't change the destination, you change the journey.</p>
+        <p class="soon">Coming soon</p>
+        <p class="credits">Written and directed by <strong>Scout Taylor-Compton</strong><br>Starring <strong>Ryan Kiera Armstrong</strong> and <strong>Freddie Prinze Jr.</strong></p>
+      </div>
+    </section>
+
+    <section class="story" aria-label="About the film">
+      <p>Sadie Chase has spent most of her life fighting brain cancer, with her devoted father, Tom, at her side. When the boy she loves goes silent and her doctors say her time is short, she convinces Tom to drive her from Los Angeles to Denver to find him. Along the way, a roadside mechanic, a kitschy alien shop, and a detour through Tom's hometown reopen old wounds, including the mother who walked out on them.</p>
+      <ul class="cast" aria-label="Cast">
+        <li>Ryan Kiera Armstrong</li>
+        <li>Freddie Prinze Jr.</li>
+        <li>Sarah Shahi</li>
+        <li>Marley Shelton</li>
+        <li>Thomas Lennon</li>
+        <li>Cameron Crovetti</li>
+        <li>Clint Howard</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <span>A Building Blocks Productions film. © 2026 Road to Recovery Film, LLC.</span>
+    <span>Press, sales and festivals: <a href="mailto:info@buildingblocksproductions.com">info@buildingblocksproductions.com</a></span>
+  </footer>
+</body>
+</html>
