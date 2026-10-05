@@ -111,6 +111,10 @@
   }
   .cast li:first-child, .cast li:nth-child(2) { color: var(--starlight); }
 
+  .still { grid-column: 1 / -1; margin: 0; }
+  .still img { display: block; width: 100%; height: auto; border-radius: 6px; }
+  .still figcaption { margin-top: 14px; font-size: 0.9375rem; letter-spacing: 0.02em; color: var(--dim); }
+
   /* Footer */
   footer {
     background: var(--deep);
@@ -179,6 +183,10 @@
     </section>
 
     <section class="story" aria-label="About the film">
+      <figure class="still">
+        <img src="assets/still-car-960.jpg" srcset="assets/still-car-960.jpg 960w, assets/still-car.jpg 1920w" sizes="(max-width: 900px) 100vw, 88vw" width="1920" height="1080" loading="lazy" alt="Sadie and her father Tom on the road in the family station wagon">
+        <figcaption>Ryan Kiera Armstrong and Freddie Prinze Jr.</figcaption>
+      </figure>
       <p>Sadie Chase has spent most of her life fighting brain cancer, with her devoted father, Tom, at her side. When the boy she loves goes silent and her doctors say her time is short, she convinces Tom to drive her from Los Angeles to Denver to find him. Along the way, a roadside mechanic, a kitschy alien shop, and a detour through Tom's hometown reopen old wounds, including the mother who walked out on them.</p>
       <ul class="cast" aria-label="Cast">
         <li>Ryan Kiera Armstrong</li>
